@@ -3247,7 +3247,7 @@ async function PerformPurchase(userLanguage, text, userConvState)
 				let newMoney = Utils.getPriceFormat(user.money.total - dbObject.value);
 				await mongoObj.uncommitSelectedAccount();
 				await mongoObj.deleteElementFromListOfSelectedAccount("futures.purchases", dbObject.name);
-				await mongoObj.updateSelectedAccount({"futures.moneyneeded": Utils.getPriceFormat(user.others.moneyneeded - dbObject.value)});
+				await mongoObj.updateSelectedAccount({"futures.moneyneeded": Utils.getPriceFormat(user.futures.moneyneeded - dbObject.value)});
 				await mongoObj.updateSelectedAccount({"futures.currentmoney": newMoneyCurrent});
 				await mongoObj.updateSelectedAccount({"money.total": newMoney});
 				await mongoObj.decrementListCountofSelectedAccount("futures");
