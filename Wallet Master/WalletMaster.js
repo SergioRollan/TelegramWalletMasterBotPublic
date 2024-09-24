@@ -8,9 +8,9 @@ const EndPoints = require('./EndPoints');
 const Utils = require('./Utils.js');
 
 
-const token = '7456324156:AAFYk4jK6X_kSYy7J6h_fDWtdHoaVOrtX3A';
+const token = 'private_token';
 const telegramUrl = 'https://api.telegram.org/bot' + token;
-const webAppUrl = 'https://script.google.com/macros/s/AKfycbxxDWlk-Ob-LFa_-Cj3Hrwc5zkTuZnUPOZOa0pvTszX7cj-rX2a33xRWYH6ynsBnt7CZQ/exec';
+const webAppUrl = 'https://script.google.com/private_url';
 const bot = new Telegraf(token);
 const debuglogs = false;
 
