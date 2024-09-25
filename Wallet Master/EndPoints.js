@@ -191,7 +191,6 @@ async function Guide(userLanguage, text, userConvState)
 	let response = {};
 	let responseMultiple = [];
 	let varTemp="";
-	console.log(userConvState.name);
 	switch (userConvState.name)
 	{
 		case States.normal:
@@ -3083,16 +3082,13 @@ async function DeleteFuturePurchase(userLanguage, text, userConvState)
 					return response;
 				}
 				response.text = '';
-				console.log(JSON.stringify(dbObject));
 				moneyToLiberate = Utils.getPriceFormat(user.futures.currentmoney - (user.futures.moneyneeded - dbObject.value));
 				if (moneyToLiberate < 0) moneyToLiberate = 0;
-				console.log(moneyToLiberate);
 				if(moneyToLiberate > 0)
 				{
 					response.text += translationsDictionary.WillLiberateSomeMoneySingle1[userLanguage] + 
 						moneyToLiberate + currentcurrency + translationsDictionary.WillLiberateSomeMoneySingle2[userLanguage] + '\n';
 				}
-				console.log('hola')
 				response.text += translationsDictionary.SureToDeletePurchase1[userLanguage] + dbObject.name + translationsDictionary.SureToDeletePurchase2[userLanguage];
 				response.mark = true;
 				response.reply_keyboard = {
