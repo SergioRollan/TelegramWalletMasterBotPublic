@@ -23,18 +23,14 @@ const client = new MongoClient(mongoUrl, {
 
 async function connect() {
 	if (!client.isConnected) {
-	    console.log("Reconectando a MongoDB Atlas...");
         try {
             await client.connect();
-            console.log("Conectado exitosamente a MongoDB Atlas:");
             db = client.db('walletmastercollection');
             return true
         } catch (error) {
-            console.error("Error conectando a MongoDB", error);
             return false;
         }
 	}
-    console.log('cliente ya conectado');
     return false;
 }
 
@@ -205,7 +201,6 @@ async function selectAccount(id){
         selectedUser = response;
         return true;
     }catch(error){
-        console.log(error);
         return false;
     }
 }
