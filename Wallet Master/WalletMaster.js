@@ -259,7 +259,6 @@ async function processQuery(ctx) {
 		default:
 			tAnswer = await EndPoints.Default(userLanguage);
 	}
-	console.log(tAnswer);
 
 	if(userConvState.name == States.error)
 	{
